@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer Portal with AWS</title>
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-
-    </style>
+	<script src="js/Api.js"></script>
+	<script src="js/Script.js"></script>
 </head>
 
 <body class="muda">
@@ -26,16 +26,16 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputFname">First Name</label>
-                            <input type="text" class="form-control" id="inputFname" placeholder="First Name" required>
+                            <input type="text" class="form-control" id="FirstName" placeholder="First Name" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputLname">Last Name</label>
-                            <input type="text" class="form-control" id="inputLName" placeholder="Last Name" required>
+                            <input type="text" class="form-control" id="LastName" placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Country</label>
-                        <select id="inputState" class="form-control" required>
+                        <select id="Country" class="form-control" required>
                             <option selected>Choose...</option>
                             <option>India</option>
                             <option>South Africa</option>
@@ -46,21 +46,24 @@
                     </div>
                     <div class="form-group">
                         <label for="Postal">Postal Code</label>
-                        <input type="tel" class="form-control numbers" id="Postal" placeholder="Eg. xxxx-xxx-xxx" required>
+                        <input type="tel" class="form-control numbers" id="PostalCode" placeholder="Eg. xxxx-xxx-xxx" required>
                     </div>
                     <div class="form-group ">
                         <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                        <input type="email" class="form-control" id="Email" placeholder="Email" required>
                     </div>
                     <div class="form-group ">
                         <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
+                        <input type="password" class="form-control" id="Password" placeholder="Password" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword-1">Conform Password</label>
-                        <input type="password" class="form-control" id="inputPassword-1" placeholder="Password" required>
+                        <label for="inputPassword-1">Confirm Password</label>
+                        <input type="password" class="form-control" id="C_Password" placeholder="Password" required>
                     </div>
-                    <center><button type="submit" class="btn btn-primary">Sign in</button></center>
+                    <center>
+						<button type="button" class="btn btn-outline-light" id="VolunteerSignUp">Signup</button>
+					</center>
+					<div id="SignupMessage"></div>
                 </form>
             </div>
 
