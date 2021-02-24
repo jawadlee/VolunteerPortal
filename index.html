@@ -20,38 +20,47 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 m-auto SingUp">
-                <h2 class="text-center">Signup</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" placeholder="First name" />
+                <form>
+                    <h2 class="text-center">Signup</h2>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputFname">First Name</label>
+                            <input type="text" class="form-control" id="inputFname" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLname">Last Name</label>
+                            <input type="text" class="form-control" id="inputLName" placeholder="Last Name" required>
                         </div>
                     </div>
-                    <!-- /.col -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" placeholder="Last name" />
-                        </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Country</label>
+                        <select id="inputState" class="form-control" required>
+                            <option selected>Choose...</option>
+                            <option>India</option>
+                            <option>South Africa</option>
+                            <option>England</option>
+                            <option>Sri Lanka</option>
+                            <option>Afganistan</option>
+                          </select>
                     </div>
-                    <!-- /.col -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <input type="text" placeholder="First name" />
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" placeholder="Last name" />
-                            </div>
-                        </div>
-                        <!-- /.col -->
+                    <div class="form-group">
+                        <label for="Postal">Postal Code</label>
+                        <input type="tel" class="form-control numbers" id="Postal" placeholder="Eg. xxxx-xxx-xxx" required>
                     </div>
-                    <!-- /.row -->
-
-                </div>
-                <!-- /.row -->
+                    <div class="form-group ">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                    </div>
+                    <div class="form-group ">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword-1">Conform Password</label>
+                        <input type="password" class="form-control" id="inputPassword-1" placeholder="Password" required>
+                    </div>
+                    <center><button type="submit" class="btn btn-primary">Sign in</button></center>
+                </form>
             </div>
 
 
@@ -59,5 +68,10 @@
     </div>
     </div>
 </body>
+<script>
+    $("input.numbers").keypress(function(event) {
+        return /\d/.test(String.fromCharCode(event.keyCode));
+    });
+</script>
 
 </html>
