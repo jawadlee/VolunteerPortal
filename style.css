@@ -1,5 +1,26 @@
-* {
-    margin: 0;
-    padding: 0;
-    color: black;
+body {
+    background: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.SingUp {
+    padding: 5%;
+}
+
+.bg-theme {
+    /* background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+}
+
+form {
+    padding: 2%;
+    border: 1px solid black;
+    opacity: 0.5;
+}
+
+form:Hover {
+    box-shadow: 1px 1px 10px black;
+    padding: 2%;
+    border-radius: 10px;
+    opacity: 1;
 }
