@@ -22,3 +22,8 @@ form:Hover {
     padding: 2%;
     border-radius: 10px;
 }
+
+input {
+    border: 0px;
+    border-bottom: 2px solid blue;
+}
