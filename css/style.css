@@ -14,15 +14,10 @@ body {
 
 form {
     padding: 2%;
+    box-shadow: 1px 1px 30px black;
+    color:white;
+    font-weight:900;
+    border-radius:5%;
 }
 
-form:Hover {
-    box-shadow: 1px 1px 10px black;
-    padding: 2%;
-    border-radius: 10px;
-}
 
-input {
-    border: 0px;
-    border-bottom: 2px solid blue;
-}
