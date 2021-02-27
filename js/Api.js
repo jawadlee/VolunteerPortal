@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	
 	// Volunteer Signup API Code.
 	$("#VolunteerSignUp").click(function(){
 		
@@ -104,7 +105,7 @@ $(document).ready(function(){
 						var Validated_Country = data.Country['S'];
 
 						// Creating Session.
-						CreateSession = sessionStorage.setItem("Current_User", Validated_Email);
+						CreateSession = localStorage.setItem("Current_User", Validated_Email);
 						location.href = "Dashboard.html";
 					}
 				}
