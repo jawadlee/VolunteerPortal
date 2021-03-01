@@ -7,6 +7,46 @@ $(document).ready(function(){
     else
     {
         // All Session Code will goes here.
+
+        // Getting all Volunteers List.
+        $("#VolunteersList").html("<div class='col-md-12'><span class='fa fa-spinner fa-spin'></span> Loading ...</div>");
+        VolunteersList_API_URL = "https://s3q91n5uwa.execute-api.us-east-2.amazonaws.com/Volunteers/volunteerslist";
+        $.ajax(
+            {
+                url : VolunteersList_API_URL,
+                type : 'GET',
+                contentType : 'application/json',
+                success : function(data)
+                {
+                    //console.log(data[0]);
+                    //console.log(data[1]);
+                    $("#VolunteersList").html("<table class='table table-bordered' id='VolunteersListData'><tr><th>No.</th><th>Full Name</th><th>Email</th><th>Country</th><th>Postal Code</th><th>Status</th></tr></table>");
+                    for(i=0; i<data.length; i++)
+                    {
+                        Email = data[i]['Email']['S'];
+                        FirstName = data[i]['FirstName']['S'];
+                        LastName = data[i]['LastName']['S'];
+                        Country = data[i]['Country']['S'];
+                        PostalCode = data[i]['PostalCode']['S'];
+                        Created_At = data[i]['Created_At']['S'];
+                        Creation = data[i]['Creation']['S'];
+                        ActiveStatus = data[i]['ActiveStatus']['S'];
+
+                        if(ActiveStatus == "Active")
+                        {
+                            var ActiveStatus_Class = "badge badge-success";
+                        }
+                        else
+                        {
+                            var ActiveStatus_Class = "badge badge-danger";
+                        }
+                        $("#VolunteersListData").append("<tr><td>"+ (i+1) +"</td><td><span class='fa fa-user-o'></span> "+FirstName +" " + LastName +"</td><td><span class='	fa fa-envelope-o'></span> "+Email+"</td><td>"+Country+"</td><td>"+PostalCode+"</td><td><span class='"+ActiveStatus_Class+"'>"+ActiveStatus+"</span></td></tr>");
+                    }
+                }
+            }
+        );
+
+
         // Getting all Details of this User.
         API_URL = "https://s3q91n5uwa.execute-api.us-east-2.amazonaws.com/Volunteers/currentvolunteerinfo";
         $.ajax(

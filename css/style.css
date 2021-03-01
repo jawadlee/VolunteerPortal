@@ -25,10 +25,13 @@ form {
 }
 .update_volunteer_section
 {
+    display:none;
+}
+.ProjectSection
+{
     background:white;
     float:left;
     padding:20px;
     margin-top:20px;
     margin-bottom:20px;
-    display:none;
 }

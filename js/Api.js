@@ -36,6 +36,17 @@ $(document).ready(function(){
 					$("#VolunteerSignUp").prop("disabled", false);
 					location.href="Login.html";
 				}
+				if(data == "ErrorSaving")
+				{
+					if(FirstName == "")
+					{
+						FirstName = "Hey";
+					}
+					$("#VolunteerSignUp").html("<span class='fa fa-check'></span> Account Created and Error in Sending Mail!");
+					$("#SignupMessage").html("<div class='alert alert-info alert-dismissable'><button type='button' class='close'>&times;</button><span>"+FirstName+"! Account already Exist with "+Email+"</span></div>");
+					$("#VolunteerSignUp").prop("disabled", true);
+					location.href="Login.html";
+				}
 				if(data == "Saved")
 				{
 					if(FirstName == "")
