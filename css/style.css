@@ -10,9 +10,25 @@
 form {
     padding: 2%;
     box-shadow: 1px 1px 30px black;
-    color:white;
     font-weight:900;
     border-radius:5%;
 }
-
-
+.volunteer-header
+{
+    background:white;
+    margin-top:15px;
+    padding:10px;
+}
+#Current_User, h1, h2, h3, h4, h5, h6
+{
+    color:#0E610E;
+}
+.update_volunteer_section
+{
+    background:white;
+    float:left;
+    padding:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+    display:none;
+}

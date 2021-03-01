@@ -90,23 +90,26 @@ $(document).ready(function(){
 				{
 					$(".LoginMessage").html("<span class='fa fa-check'></span> Completed");
 					$("#LoginSubmit").prop("disabled", false);
+					console.log(data);
 					if(data == "0")
 					{
 						$(".LoginMessage").html("<span class='text-danger'><span class='fa fa-info-circle'></span> Invalid Username or Password!!</span>");
 						$("#Login_Username").val("");
 						$("#Login_Password").val("");
 					}
-					if(data != "0")
+					if(data == "1")
 					{
-						var Validated_Email = data.Email['S'];
-						var Validated_FirstName = data.FirstName['S'];
-						var Validated_LastName = data.LastName['S'];
-						var Validated_PostalCode = data.PostalCode['S'];
-						var Validated_Country = data.Country['S'];
+						var Validated_Email = Username;
 
 						// Creating Session.
 						CreateSession = localStorage.setItem("Current_User", Validated_Email);
 						location.href = "Dashboard.html";
+					}
+					if(data == "Error")
+					{
+						$(".LoginMessage").html("<span class='text-danger'><span class='fa fa-info-circle'></span> Please create an account</span>");
+						$("#Login_Username").val("");
+						$("#Login_Password").val("");
 					}
 				}
 			});
