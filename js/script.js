@@ -1,10 +1,19 @@
 // First Name
 $(document).ready(function() {
+    var FirstName = $("#FirstName").val();
+    var LastName = $("#LastName").val();
+    var Country = $("#Country").val();
+    var Email = $("#Email").val();
+    var PostalCode = $("#PostalCode").val();
+    var Password = $("#Password").val();
+    var Password1 = $("#C_Password").val();
+
     $("#FirstName").on("change input", function() {
         var FirstName = $("#FirstName").val();
-        if (FirstName == "") {
+        if (FirstName.length == 0) {
             $("#Firstname_Message").html("Field Cannot be empty!!");
-        } else {
+        }
+        if (FirstName.length != 0) {
             $("#Firstname_Message").html("");
         }
     });
@@ -54,11 +63,24 @@ $(document).ready(function() {
         }
     });
     $("#C_Password").on("change input", function() {
+        var Password = $("#Password").val();
         var Password1 = $("#C_Password").val();
+        if (password == "Password1") {
+            $("#Password_Match").html("Password Matched")
+        } else {
+            $("#Password_Match").html("Password Not Matched")
+        }
         if (Password1 == "") {
             $("#Password_Message1").html("Field Cannot be empty!!");
         } else {
             $("#Password_Message1").html("");
         }
     });
+    // if (FirstName == "" || LastName == "" || Country == "" || Email == "" || PostalCode == "" || Password == "" || Password1 == "") {
+    //     $("#VolunteerSignUp").prop("disable", "true");
+    // } else {
+    //     $("#VolunteerSignUp").prop("disable", "false");
+    // }
+
+
 });
