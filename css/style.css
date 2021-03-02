@@ -9,7 +9,6 @@
 form {
     padding: 2%;
     box-shadow: 1px 1px 30px black;
-<<<<<<< HEAD
     font-weight: 900;
     border-radius: 5%;
 }
@@ -18,50 +17,6 @@ form {
     background: white;
     margin-top: 15px;
     padding: 10px;
-}
-
-#Current_User,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #0E610E;
-}
-
-.update_volunteer_section {
-    display: none;
-}
-
-.ProjectSection {
-    background: white;
-    float: left;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.Notification_Message {
-    width: 25%;
-    display: none;
-    padding: 10px;
-    background: white;
-    box-shadow: 0px 0px 10px #f7f7f7;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 10;
-=======
-    font-weight:900;
-    border-radius:5%;
-}
-.volunteer-header
-{
-    background:white;
-    margin-top:15px;
-    padding:10px;
->>>>>>> 4ebf680aa3b62e1bf50fe876205f0fdb6145043c
 }
 
 .Quick_Overview {
