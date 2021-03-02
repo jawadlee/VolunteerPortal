@@ -12,12 +12,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script src="js/Api.js"></script>
     <script src="js/script.js"></script>
     <script src="js/Dashboard.js"></script>
 </head>
 
 <body style="background:#EBEFEB;">
+    <!-- Message Notification Section.-->
+    <div class="Notification_Message" id="Notification_Message"></div>
+    <!-- Message Notification Section.-->
+
     <div class="container-fluid">
         <div class="col-md-12 p-2 float-left volunteer-header">
             <h5>
@@ -26,6 +32,7 @@
                     <span class="fa fa-spinner fa-spin"></span>
                 </span>
                 <span class="pull-right">
+                    <input type="checkbox" data-toggle="toggle" data-on="Active" data-off="Deactivate" data-onstyle="success" data-offstyle="danger" id="EditActiveStatus">
                     <button type="button" class="btn btn-outline-info btn-sm" id="UpdateVolunteer"><span
                             class="fa fa-edit"></span> Update Profile</button>
                     <button type="button" class="btn btn-outline-danger btn-sm" id="LogoutVolunteer"><span
