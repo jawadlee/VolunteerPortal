@@ -41,10 +41,51 @@
             </h5>
         </div>
     </div>
+    <!-- End of Header -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-2 float-left text-center pointer Quick_Overview All_Volunteers">
+                    <h1><span class="fa fa-user"></span></h1>
+                    <h6>Volunteers <br><span id="Volunteer_Count"><span class='fa fa-spinner fa-spin'></span></span></h6>
+                </div>
+                <!-- End of Individual Quick Overview-->
+                <div class="col-md-2 float-left text-center pointer Quick_Overview Active_Volunteers">
+                    <h1><span class="fa fa-user"></span></h1>
+                    <h6>Active <br><span id="Active_Volunteer_Count"><span class='fa fa-spinner fa-spin'></span></span></h6>
+                </div>
+                <!-- End of Individual Quick Overview-->
+                <div class="col-md-2 float-left text-center pointer Quick_Overview">
+                    <h1><span class="fa fa-user"></span></h1>
+                    <h6>Active <br><span>2</span></h6>
+                </div>
+                <!-- End of Individual Quick Overview-->
+                <div class="col-md-2 float-left text-center pointer Quick_Overview">
+                    <h1><span class="fa fa-user"></span></h1>
+                    <h6>Active <br><span>2</span></h6>
+                </div>
+                <!-- End of Individual Quick Overview-->
+                <div class="col-md-2 float-left text-center pointer Quick_Overview">
+                    <h1><span class="fa fa-user"></span></h1>
+                    <h6>Active <br><span>2</span></h6>
+                </div>
+                <!-- End of Individual Quick Overview-->
+                <div class="col-md-2 float-left text-center pointer Quick_Overview">
+                    <h1><span class="fa fa-user"></span></h1>
+                    <h6>Active <br><span>2</span></h6>
+                </div>
+                <!-- End of Individual Quick Overview-->
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!-- Start of hidden Sections-->
     <div class="container-fluid">
-        <div class="col-md-12 update_volunteer_section ProjectSection">
-            <h4><span class="fa fa-edit text-success"></span>Update Profile Info.</h4>
+        <div class="col-md-12 update_volunteer_section ProjectSection Project_Panel">
+            <h4><span class="fa fa-edit text-success"></span>Update Profile Info. <span class='fa fa-times pull-right pointer Close_update_volunteer_section'></span></h4>
             <div class="form-group">
                 <label>Email : </label>
                 <input type="email" class="form-control" name="Email" id="Volunteer_Email" disabled />
@@ -77,12 +118,20 @@
         </div>
     </div>
     <!-- End of Update Profile Section (Hidden)-->
-    <div class="container-fluid">
+    <div class="container-fluid Volunteers_List Project_Panel">
         <div class="col-md-12 ProjectSection">
-            <h5><span class="fa fa-user-o"></span> Volunteers List</h5>
+            <h5><span class="fa fa-user-o"></span> Volunteers List <span class='fa fa-times pull-right pointer Close_Volunteers_List'></span></h5>
             <div class="row" id="VolunteersList"></div>
         </div>
     </div>
+    <!-- End of All Volunteers List (Hidden)-->
+    <div class="container-fluid Active_Volunteers_List Project_Panel">
+        <div class="col-md-12 ProjectSection">
+            <h5><span class="fa fa-user-o"></span> Active Volunteers List <span class='fa fa-times pull-right pointer Close_Active_Volunteers_List'></span></h5>
+            <div class="row" id="ActiveVolunteersList"></div>
+        </div>
+    </div>
+    <!-- End of All Active Volunteers List (Hidden)-->
 </body>
 
 </html>

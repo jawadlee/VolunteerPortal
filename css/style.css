@@ -47,3 +47,21 @@ form {
     bottom:20px;
     z-index:10;
 }
+.Quick_Overview
+{
+    background: white;
+    margin-top:20px;
+    transition:all ease 0.5s;
+}
+.Quick_Overview:hover
+{
+    background: #C6DDC6;
+}
+.Volunteers_List, .Active_Volunteers_List
+{
+    display:none;
+}
+.pointer
+{
+    cursor: pointer;
+}
