@@ -6,62 +6,6 @@
     /* background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
 }
 
-<<<<<<< HEAD
-input {
-    box-shadow: 1px 1px 25px #827bac;
-}
-
-.Part-Left {
-    background-image: url(https://i.pinimg.com/originals/79/26/30/792630d0ffeee67dda34f51c6a2546f3.jpg);
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.Part-img {
-    border-radius: 100px;
-    height: 150px;
-}
-
-.volunteer-header {
-    background: white;
-    margin-top: 15px;
-    padding: 10px;
-}
-
-#Current_User,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #0E610E;
-}
-
-.update_volunteer_section {
-    display: none;
-}
-
-.ProjectSection {
-    background: white;
-    float: left;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.Notification_Message {
-    width: 25%;
-    display: none;
-    padding: 10px;
-    background: white;
-    box-shadow: 0px 0px 10px #f7f7f7;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 10;
-=======
 form {
     padding: 2%;
     box-shadow: 1px 1px 30px black;
@@ -119,5 +63,4 @@ form {
 .pointer
 {
     cursor: pointer;
->>>>>>> 0e7ec25db565986196a182d4fa440d337140ccd0
 }
