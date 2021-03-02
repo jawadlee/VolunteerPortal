@@ -9,65 +9,58 @@
 form {
     padding: 2%;
     box-shadow: 1px 1px 30px black;
-    font-weight: 900;
-    border-radius: 5%;
+    font-weight:900;
+    border-radius:5%;
 }
-
-.volunteer-header {
+.volunteer-header
+{
+    background:white;
+    margin-top:15px;
+    padding:10px;
+}
+#Current_User, h1, h2, h3, h4, h5, h6
+{
+    color:#0E610E;
+}
+.update_volunteer_section
+{
+    display:none;
+}
+.ProjectSection
+{
+    background:white;
+    float:left;
+    padding:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.Notification_Message
+{
+    width:25%;
+    display:none;
+    padding:10px;
+    background:white;
+    box-shadow:0px 0px 10px #f7f7f7;
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:10;
+}
+.Quick_Overview
+{
     background: white;
-    margin-top: 15px;
-    padding: 10px;
+    margin-top:20px;
+    transition:all ease 0.5s;
 }
-
-#Current_User,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #0E610E;
-}
-
-.update_volunteer_section {
-    display: none;
-}
-
-.ProjectSection {
-    background: white;
-    float: left;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.Notification_Message {
-    width: 25%;
-    display: none;
-    padding: 10px;
-    background: white;
-    box-shadow: 0px 0px 10px #f7f7f7;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 10;
-}
-
-.Quick_Overview {
-    background: white;
-    margin-top: 20px;
-    transition: all ease 0.5s;
-}
-
-.Quick_Overview:hover {
+.Quick_Overview:hover
+{
     background: #C6DDC6;
 }
-
-.Volunteers_List,
-.Active_Volunteers_List {
-    display: none;
+.Volunteers_List, .Active_Volunteers_List
+{
+    display:none;
 }
-
-.pointer {
+.pointer
+{
     cursor: pointer;
 }
