@@ -8,6 +8,43 @@ $(document).ready(function(){
     {
         // All Session Code will goes here.
 
+        // Edit Active Status Code.
+        $("#EditActiveStatus").on("change", function(){
+            if($(this).is(':checked'))
+            {
+                var Edit_Status = "1";
+            }
+            else
+            {
+                var Edit_Status = "0";
+            }
+
+            $("#Notification_Message").html("<span class='fa fa-spinner fa-spin'></span> Updating Status ...").show();
+
+            // Passing Active Status to API.
+            UpdateActiveStatus_API_URL = "https://s3q91n5uwa.execute-api.us-east-2.amazonaws.com/Volunteers/updateactivestatus";
+            $.ajax(
+                {
+                    url : UpdateActiveStatus_API_URL,
+                    type : 'POST',
+                    contentType : 'application/json',
+                    data : JSON.stringify({ActiveStatus : Edit_Status, Username : GetSession}),
+                    success : function(data)
+                    {
+                        if(data == "1")
+                        {
+                            $("#Notification_Message").html("<h6 class='text-success'>Active Status Updated!!</h6>");
+                            $("#Notification_Message").fadeIn();
+                            setTimeout(function(){
+                                $("#Notification_Message").fadeOut();
+                            },2000);
+                            location.href="Dashboard.html";
+                        }
+                    }
+                }
+            );
+        });
+
         // Getting all Volunteers List.
         $("#VolunteersList").html("<div class='col-md-12'><span class='fa fa-spinner fa-spin'></span> Loading ...</div>");
         VolunteersList_API_URL = "https://s3q91n5uwa.execute-api.us-east-2.amazonaws.com/Volunteers/volunteerslist";
@@ -40,7 +77,7 @@ $(document).ready(function(){
                         {
                             var ActiveStatus_Class = "badge badge-danger";
                         }
-                        $("#VolunteersListData").append("<tr><td>"+ (i+1) +"</td><td><span class='fa fa-user-o'></span> "+FirstName +" " + LastName +"</td><td><span class='	fa fa-envelope-o'></span> "+Email+"</td><td>"+Country+"</td><td>"+PostalCode+"</td><td><span class='"+ActiveStatus_Class+"'>"+ActiveStatus+"</span></td></tr>");
+                        $("#VolunteersListData").append("<tr><td>"+ (i+1) +"</td><td><span class='fa fa-user-o'></span> "+FirstName +" " + LastName +"</td><td><span class='fa fa-envelope-o'></span> "+Email+"</td><td><span class='fa fa-flag-o'></span> "+Country+"</td><td>"+PostalCode+"</td><td><span class='"+ActiveStatus_Class+"'>"+ActiveStatus+"</span></td></tr>");
                     }
                 }
             }
@@ -64,13 +101,27 @@ $(document).ready(function(){
                     var Current_Email = data['Email']['S'];
                     var Current_Country = data['Country']['S'];
                     var Current_PostalCode = data['PostalCode']['S'];
+                    var Current_Status = data['ActiveStatus']['S'];
 
-                    $("#Current_User").text(Current_FullName);
+                    if(Current_Status == "Active")
+                    {
+                        var ActiveStatus_Class = "badge badge-success";
+                        $("#EditActiveStatus").prop("checked", true);
+                    }
+                    if(Current_Status == "Deactivated")
+                    {
+                        var ActiveStatus_Class = "badge badge-danger";
+                        $("#EditActiveStatus").prop("checked", false);
+                    }
+
+                    $("#Current_User").html(Current_FullName + " <span class='"+ActiveStatus_Class+"'>"+Current_Status+"</span>");
                     $("#Volunteer_Email").val(Current_Email);
                     $("#Volunteer_FirstName").val(Current_FirstName);
                     $("#Volunteer_LastName").val(Current_LastName);
                     $("#Volunteer_PostalCode").val(Current_PostalCode);
                     $("#Volunteer_Country").val(Current_Country);
+                    
+                    
                 }
             }
         );
