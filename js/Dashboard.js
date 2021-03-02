@@ -8,6 +8,35 @@ $(document).ready(function(){
     {
         // All Session Code will goes here.
 
+        // Show Hidden Update Volunteer Section
+        // .Project_Panel must have to SlideUp() before any other panel SlideDown().
+        $("#UpdateVolunteer").click(function(){
+            $(".Project_Panel").slideUp();
+            $(".update_volunteer_section").slideToggle();
+        });
+        
+        $(".All_Volunteers").on("click", function(){
+            $(".Project_Panel").slideUp();
+            $(".Volunteers_List").slideToggle();
+        });
+        $(".Close_Volunteers_List").click(function(){
+            $(".Volunteers_List").slideUp();
+        });
+
+        $(".Close_update_volunteer_section").click(function(){
+            $(".update_volunteer_section").slideUp();
+        });
+
+        $(".Active_Volunteers").click(function(){
+            $(".Project_Panel").slideUp();
+            $(".Active_Volunteers_List").slideToggle();
+        });
+        $(".Close_Active_Volunteers_List").click(function(){
+            $(".Active_Volunteers_List").slideUp();
+        });
+        // End of Show Hide Code.
+
+
         // Edit Active Status Code.
         $("#EditActiveStatus").on("change", function(){
             if($(this).is(':checked'))
@@ -57,7 +86,10 @@ $(document).ready(function(){
                 {
                     //console.log(data[0]);
                     //console.log(data[1]);
+                    Count_Volunteers = data.length;
+                    $("#Volunteer_Count").html(Count_Volunteers);
                     $("#VolunteersList").html("<table class='table table-bordered' id='VolunteersListData'><tr><th>No.</th><th>Full Name</th><th>Email</th><th>Country</th><th>Postal Code</th><th>Status</th></tr></table>");
+                    var Count_Active_Volunteers = 0;
                     for(i=0; i<data.length; i++)
                     {
                         Email = data[i]['Email']['S'];
@@ -72,13 +104,35 @@ $(document).ready(function(){
                         if(ActiveStatus == "Active")
                         {
                             var ActiveStatus_Class = "badge badge-success";
+                            Count_Active_Volunteers += 1;
                         }
                         else
                         {
                             var ActiveStatus_Class = "badge badge-danger";
                         }
                         $("#VolunteersListData").append("<tr><td>"+ (i+1) +"</td><td><span class='fa fa-user-o'></span> "+FirstName +" " + LastName +"</td><td><span class='fa fa-envelope-o'></span> "+Email+"</td><td><span class='fa fa-flag-o'></span> "+Country+"</td><td>"+PostalCode+"</td><td><span class='"+ActiveStatus_Class+"'>"+ActiveStatus+"</span></td></tr>");
-                    }
+                    } // End of FOR loop.
+
+                    // Getting List of All Active Volunteers List
+                    $("#ActiveVolunteersList").html("<table class='table table-bordered' id='ActiveVolunteersListData'><tr><th>No.</th><th>Full Name</th><th>Email</th><th>Country</th><th>Postal Code</th><th>Status</th></tr></table>");
+                    for(i=0; i<data.length; i++)
+                    {
+                        Email = data[i]['Email']['S'];
+                        FirstName = data[i]['FirstName']['S'];
+                        LastName = data[i]['LastName']['S'];
+                        Country = data[i]['Country']['S'];
+                        PostalCode = data[i]['PostalCode']['S'];
+                        Created_At = data[i]['Created_At']['S'];
+                        Creation = data[i]['Creation']['S'];
+                        ActiveStatus = data[i]['ActiveStatus']['S'];
+
+                        if(ActiveStatus == "Active")
+                        {
+                            var ActiveStatus_Class = "badge badge-success";
+                            $("#ActiveVolunteersListData").append("<tr><td>"+ (i+1) +"</td><td><span class='fa fa-user-o'></span> "+FirstName +" " + LastName +"</td><td><span class='fa fa-envelope-o'></span> "+Email+"</td><td><span class='fa fa-flag-o'></span> "+Country+"</td><td>"+PostalCode+"</td><td><span class='"+ActiveStatus_Class+"'>"+ActiveStatus+"</span></td></tr>");
+                        }
+                    } // End of FOR loop.
+                    $("#Active_Volunteer_Count").html(Count_Active_Volunteers);
                 }
             }
         );
@@ -176,8 +230,4 @@ $(document).ready(function(){
         location.href = "Login.html";
     });
 
-    // Show Hidden Update Volunteer Section
-    $("#UpdateVolunteer").click(function(){
-        $(".update_volunteer_section").slideToggle();
-    });
 });
