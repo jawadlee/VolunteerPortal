@@ -4,20 +4,8 @@ form {
     padding: 30px;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 83595236a32b802c53aa86cd3a7c5fb061f57040
 input {
     box-shadow: 1px 1px 20px rgb(166, 157, 182);
-}
-
-.Part-Right {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-blend-mode: overlay;
 }
 
 .Part-Left {
@@ -26,12 +14,16 @@ input {
     background-image: url(https://img.freepik.com/free-vector/white-3d-modern-background-design_53876-88246.jpg?size=626&ext=jpg&ga=GA1.2.1913179976.1612396800);
     background-repeat: no-repeat;
     background-size: cover;
-    color: #1259C2;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: overlay;
     background-image: url("https://i.pinimg.com/736x/fa/00/e0/fa00e080f08e4e0184811e0ff84e813c.jpg"), linear-gradient(45deg, #7809f79a, #1259C2);
+}
+
+.click {
+    color: rgba(250, 123, 4, 0.952);
+    padding: 5px;
 }
 
 .sign-button {
@@ -55,5 +47,5 @@ p {
     text-align: justify;
     font-size: 18px;
     font-weight: bold;
-    padding: 10px;
+    color: white;
 }

@@ -15,3 +15,4 @@ Medium Color2 : #3E80E1
 
 Light Color1 : #A2C6FA
 Light Color2 : #CDE0FC
+Light Color3 : #EFF4FC
