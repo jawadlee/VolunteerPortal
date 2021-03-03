@@ -58,7 +58,7 @@
 {
     background: #C6DDC6;
 }
-.Volunteers_List, .Active_Volunteers_List
+.Volunteers_List, .Active_Volunteers_List, .Deactivated_Volunteers_List
 {
     display:none;
 }
