@@ -28,8 +28,8 @@
     <div class="container-fluid">
         <div class="col-md-12 p-2 float-left volunteer-header">
             <h5>
-                <span class="fa fa-user-circle"></span>
-                <span id="Current_User">
+                <img src="img/Default.jpg" class="pointer Volunteer_Profile_Pic" id="Volunteer_Profile_Pic" data-toggle="modal" data-target="#VolunteerProfileUpdate" />
+                <span id="Current_User" class="pointer" data-toggle="modal" data-target="#VolunteerProfileUpdate">
                     <span class="fa fa-spinner fa-spin"></span>
                 </span>
                 <span class="pull-right">
@@ -133,6 +133,42 @@
         </div>
     </div>
     <!-- End of All Active Volunteers List (Hidden)-->
+
+
+  <!-- The Modal for Updating the Volunteer Profile Picture -->
+  <div class="modal fade" id="VolunteerProfileUpdate">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Update Profile Picture!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form>
+                <label for="formFileLg" class="form-label">Update your Profile Pic.</label>
+                <input class="form-control" id="UpdateVolunteerProfilePicture" type="text" placeholder="Profile Pic URL." />
+                <br>
+                <center>
+                    <button type="button" class="btn btn-outline-success" id="UpdateVolunteerProfilePictureSubmit">Update Picture</button>
+                </center>
+            </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- The End of Modal for Updating the Volunteer Profile Picture -->
+
+
 </body>
 
 </html>

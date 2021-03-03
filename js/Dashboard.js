@@ -14,7 +14,7 @@ $(document).ready(function(){
             $(".Project_Panel").slideUp();
             $(".update_volunteer_section").slideToggle();
         });
-        
+
         $(".All_Volunteers").on("click", function(){
             $(".Project_Panel").slideUp();
             $(".Volunteers_List").slideToggle();
@@ -156,6 +156,13 @@ $(document).ready(function(){
                     var Current_Country = data['Country']['S'];
                     var Current_PostalCode = data['PostalCode']['S'];
                     var Current_Status = data['ActiveStatus']['S'];
+                    var Current_ProfilePic = data['ProfilePic']['S'];
+                    if(Current_ProfilePic == "0")
+                    {
+                        Current_ProfilePic = "img/Default.jpg";
+                        $("#Volunteer_Profile_Pic").attr("src", Current_ProfilePic);
+                    }
+                    $("#Volunteer_Profile_Pic").attr("src", Current_ProfilePic);
 
                     if(Current_Status == "Active")
                     {
@@ -221,6 +228,44 @@ $(document).ready(function(){
                 }
             );
         });
+
+        // Update Profile Pic of Volunteers.
+        $("#UpdateVolunteerProfilePictureSubmit").on("click", function(){
+            Update_Profile_Pic_API_URL = "https://s3q91n5uwa.execute-api.us-east-2.amazonaws.com/Volunteers/updateprofilepicture";
+            var UpdatedProfilePic = $("#UpdateVolunteerProfilePicture").val();
+            //console.log(Profile_Pic);
+            $.ajax(
+                {
+                    url : Update_Profile_Pic_API_URL,
+                    type : 'POST',
+                    contentType : 'application/json',
+                    data : JSON.stringify({UpdatedProfilePic : UpdatedProfilePic, Username : GetSession}),
+                    success : function(data)
+                    {
+                        if(data == "1")
+                        {
+                            $("#Notification_Message").html("<h6 class='text-success'>Profile Pic Updated!!</h6>");
+                            $("#VolunteerProfileUpdate").modal("hide");
+                            $("#Notification_Message").fadeIn();
+                            setTimeout(function(){
+                                $("#Notification_Message").fadeOut();
+                            },2000);
+                            location.href="Dashboard.html";
+                        }
+                        if(data == "0")
+                        {
+                            $("#Notification_Message").html("<h6 class='text-danger'>Profile Pic not Updated!!</h6>");
+                            $("#VolunteerProfileUpdate").modal("hide");
+                            $("#Notification_Message").fadeIn();
+                            setTimeout(function(){
+                                $("#Notification_Message").fadeOut();
+                            },10000);
+                        }
+                    }
+                }
+            );
+        });
+
     }// End of Session Validation Main ELSE.
 
 
