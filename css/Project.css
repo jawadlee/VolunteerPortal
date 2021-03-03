@@ -4,32 +4,52 @@ form {
     padding: 30px;
 }
 
-#Current_User,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #0E610E;
-}
-
 input {
     box-shadow: 1px 1px 20px rgb(166, 157, 182);
 }
 
-.Part-Right {}
+.Part-Right {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
 
 .Part-Left {
     padding: 30px;
     height: 100%;
-    background-image: url(https://i.pinimg.com/originals/93/ff/10/93ff100f3f757f34869eee2cd5d1151c.jpg);
+    background-image: url(https://img.freepik.com/free-vector/white-3d-modern-background-design_53876-88246.jpg?size=626&ext=jpg&ga=GA1.2.1913179976.1612396800);
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: #1259C2;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-image: url("https://i.pinimg.com/736x/fa/00/e0/fa00e080f08e4e0184811e0ff84e813c.jpg"), linear-gradient(45deg, #7809f79a, #1259C2);
+}
+
+.sign-button {
+    border-radius: 20px;
+    color: #1259C2;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
 }
 
 .Part-img {
     height: 150px;
     border-radius: 100px;
+    margin-top: 150px;
+}
+
+p {
+    text-align: justify;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
 }
