@@ -1,0 +1,35 @@
+form {
+    font-weight: 900;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+#Current_User,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #0E610E;
+}
+
+input {
+    box-shadow: 1px 1px 20px rgb(166, 157, 182);
+}
+
+.Part-Right {}
+
+.Part-Left {
+    padding: 30px;
+    height: 100%;
+    background-image: url(https://i.pinimg.com/originals/93/ff/10/93ff100f3f757f34869eee2cd5d1151c.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.Part-img {
+    height: 150px;
+    border-radius: 100px;
+}
