@@ -4,15 +4,6 @@ form {
     padding: 30px;
 }
 
-#Current_User,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #0E610E;
-}
 
 input {
     box-shadow: 1px 1px 20px rgb(166, 157, 182);
